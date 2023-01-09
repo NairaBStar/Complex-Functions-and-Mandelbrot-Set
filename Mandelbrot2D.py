@@ -12,7 +12,7 @@ u = -2
 def quadratic(l):
     w = l
     for i in range(10):
-        w = w*w*w + l
+        w = w*w + l
     return w
 
 #Creating axes, intervals = 0.04
@@ -27,6 +27,7 @@ for m in range(0, 100):
     for n in range(0, 100):
         c = Y[n]
         z = complex(r, c)
+        # Checks if iterating makes the number spiral out to infinity; uses standard test for this (checks if consecutive iterations yield a number that exceeds 2).
         if abs(quadratic(z)) <= 2:
             plt.scatter(r, c)
 
